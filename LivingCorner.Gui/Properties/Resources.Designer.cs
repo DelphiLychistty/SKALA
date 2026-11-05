@@ -63,9 +63,9 @@ namespace LivingCorner.Gui.Properties {
         /// <summary>
         ///   Поиск локализованного ресурса типа System.Drawing.Bitmap.
         /// </summary>
-        public static System.Drawing.Bitmap Grob1 {
+        public static System.Drawing.Bitmap Coffin1 {
             get {
-                object obj = ResourceManager.GetObject("Grob1", resourceCulture);
+                object obj = ResourceManager.GetObject("Coffin1", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -73,9 +73,9 @@ namespace LivingCorner.Gui.Properties {
         /// <summary>
         ///   Поиск локализованного ресурса типа System.Drawing.Bitmap.
         /// </summary>
-        public static System.Drawing.Bitmap Grob2 {
+        public static System.Drawing.Bitmap Coffin2 {
             get {
-                object obj = ResourceManager.GetObject("Grob2", resourceCulture);
+                object obj = ResourceManager.GetObject("Coffin2", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -83,9 +83,9 @@ namespace LivingCorner.Gui.Properties {
         /// <summary>
         ///   Поиск локализованного ресурса типа System.Drawing.Bitmap.
         /// </summary>
-        public static System.Drawing.Bitmap Grob3 {
+        public static System.Drawing.Bitmap Coffin3 {
             get {
-                object obj = ResourceManager.GetObject("Grob3", resourceCulture);
+                object obj = ResourceManager.GetObject("Coffin3", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

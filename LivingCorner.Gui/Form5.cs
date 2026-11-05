@@ -120,7 +120,7 @@ namespace LivingCorner.Gui
             MessageBox.Show($"Вітаємо! Ритуальний пакет оформлено!\nТруна: {selectedCoffin.Name}\nСвященик: {selectedPriest.Name}\nРівень: {selectedTier.Name}\nСписано: {totalCost} $\nЗалишок: {Money.Coin} $", "Замовлення оформлено", MessageBoxButtons.OK, MessageBoxIcon.Information);
         }
 
-        private void ButtBekStore_Click(object sender, EventArgs e)
+        private void BtnBekStore_Click(object sender, EventArgs e)
         {
             foreach (Form form in Application.OpenForms)
             {
@@ -141,7 +141,7 @@ namespace LivingCorner.Gui
         }
 
         private void lblChop_Click(object sender, EventArgs e) { }
-        private void ButBuyGrob_Click(object sender, EventArgs e) { }
+        private void ButBuyCoffin_Click(object sender, EventArgs e) { }
         private void ButBuySvat_Click(object sender, EventArgs e) { }
         private void label1_Click(object sender, EventArgs e) { }
         private void label2_Click(object sender, EventArgs e) { }

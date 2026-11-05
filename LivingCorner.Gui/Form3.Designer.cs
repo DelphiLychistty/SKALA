@@ -30,7 +30,7 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form3));
             DGVVOjid = new DataGridView();
-            ButtBackVOjid = new Button();
+            BtnBackVOjid = new Button();
             ((System.ComponentModel.ISupportInitialize)DGVVOjid).BeginInit();
             SuspendLayout();
             DGVVOjid.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
@@ -40,19 +40,19 @@
             DGVVOjid.Size = new Size(557, 385);
             DGVVOjid.TabIndex = 0;
             DGVVOjid.CellContentClick += DGVVOjid_CellContentClick;
-            ButtBackVOjid.Location = new Point(12, 403);
-            ButtBackVOjid.Name = "ButtBackVOjid";
-            ButtBackVOjid.Size = new Size(115, 35);
-            ButtBackVOjid.TabIndex = 1;
-            ButtBackVOjid.Text = "Назад";
-            ButtBackVOjid.UseVisualStyleBackColor = true;
-            ButtBackVOjid.Click += ButtBackVOjid_Click;
+            BtnBackVOjid.Location = new Point(12, 403);
+            BtnBackVOjid.Name = "BtnBackVOjid";
+            BtnBackVOjid.Size = new Size(115, 35);
+            BtnBackVOjid.TabIndex = 1;
+            BtnBackVOjid.Text = "Назад";
+            BtnBackVOjid.UseVisualStyleBackColor = true;
+            BtnBackVOjid.Click += BtnBackVOjid_Click;
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
             BackgroundImage = (Image)resources.GetObject("$this.BackgroundImage");
             BackgroundImageLayout = ImageLayout.Stretch;
             ClientSize = new Size(800, 450);
-            Controls.Add(ButtBackVOjid);
+            Controls.Add(BtnBackVOjid);
             Controls.Add(DGVVOjid);
             DoubleBuffered = true;
             Name = "Form3";
@@ -64,6 +64,6 @@
         #endregion
 
         private DataGridView DGVVOjid;
-        private Button ButtBackVOjid;
+        private Button BtnBackVOjid;
     }
 }

@@ -118,13 +118,13 @@
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
-  <data name="Grob1" type="System.Resources.ResXFileRef, System.Windows.Forms">
+  <data name="Coffin1" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\1Гроб.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="Grob2" type="System.Resources.ResXFileRef, System.Windows.Forms">
+  <data name="Coffin2" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\2Гроб.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="Grob3" type="System.Resources.ResXFileRef, System.Windows.Forms">
+  <data name="Coffin3" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\3Гроб.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
 </root>

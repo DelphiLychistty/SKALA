@@ -18,10 +18,10 @@ namespace LivingCorner.Gui
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form5));
-            ButtBekStore = new Button();
+            BtnBekStore = new Button();
             ButMoney = new Button();
             lblChop = new Label();
-            ButBuyGrob = new Button();
+            ButBuyCoffin = new Button();
             ButBuySvat = new Button();
             label1 = new Label();
             label2 = new Label();
@@ -31,15 +31,15 @@ namespace LivingCorner.Gui
             labelTier = new Label();
             btnCheckout = new Button();
             SuspendLayout();
-            ButtBekStore.BackgroundImage = (Image)resources.GetObject("ButtBekStore.BackgroundImage");
-            ButtBekStore.BackgroundImageLayout = ImageLayout.Stretch;
-            ButtBekStore.Location = new Point(12, 402);
-            ButtBekStore.Name = "ButtBekStore";
-            ButtBekStore.Size = new Size(106, 36);
-            ButtBekStore.TabIndex = 0;
-            ButtBekStore.Text = "Назад";
-            ButtBekStore.UseVisualStyleBackColor = true;
-            ButtBekStore.Click += ButtBekStore_Click;
+            BtnBekStore.BackgroundImage = (Image)resources.GetObject("BtnBekStore.BackgroundImage");
+            BtnBekStore.BackgroundImageLayout = ImageLayout.Stretch;
+            BtnBekStore.Location = new Point(12, 402);
+            BtnBekStore.Name = "BtnBekStore";
+            BtnBekStore.Size = new Size(106, 36);
+            BtnBekStore.TabIndex = 0;
+            BtnBekStore.Text = "Назад";
+            BtnBekStore.UseVisualStyleBackColor = true;
+            BtnBekStore.Click += BtnBekStore_Click;
             ButMoney.BackgroundImage = (Image)resources.GetObject("ButMoney.BackgroundImage");
             ButMoney.BackgroundImageLayout = ImageLayout.Stretch;
             ButMoney.Location = new Point(627, 381);
@@ -55,13 +55,13 @@ namespace LivingCorner.Gui
             lblChop.Size = new Size(300, 35);
             lblChop.TabIndex = 2;
             lblChop.Text = "$: 0";
-            ButBuyGrob.BackgroundImage = (Image)resources.GetObject("ButBuyGrob.BackgroundImage");
-            ButBuyGrob.BackgroundImageLayout = ImageLayout.Stretch;
-            ButBuyGrob.Location = new Point(70, 60);
-            ButBuyGrob.Name = "ButBuyGrob";
-            ButBuyGrob.Size = new Size(160, 150);
-            ButBuyGrob.TabIndex = 3;
-            ButBuyGrob.UseVisualStyleBackColor = true;
+            ButBuyCoffin.BackgroundImage = (Image)resources.GetObject("ButBuyCoffin.BackgroundImage");
+            ButBuyCoffin.BackgroundImageLayout = ImageLayout.Stretch;
+            ButBuyCoffin.Location = new Point(70, 60);
+            ButBuyCoffin.Name = "ButBuyCoffin";
+            ButBuyCoffin.Size = new Size(160, 150);
+            ButBuyCoffin.TabIndex = 3;
+            ButBuyCoffin.UseVisualStyleBackColor = true;
             ButBuySvat.BackgroundImage = (Image)resources.GetObject("ButBuySvat.BackgroundImage");
             ButBuySvat.BackgroundImageLayout = ImageLayout.Stretch;
             ButBuySvat.Location = new Point(310, 60);
@@ -124,10 +124,10 @@ namespace LivingCorner.Gui
             Controls.Add(label2);
             Controls.Add(label1);
             Controls.Add(ButBuySvat);
-            Controls.Add(ButBuyGrob);
+            Controls.Add(ButBuyCoffin);
             Controls.Add(lblChop);
             Controls.Add(ButMoney);
-            Controls.Add(ButtBekStore);
+            Controls.Add(BtnBekStore);
             Name = "Form5";
             Text = "Магазин";
             Load += Form5_Load;
@@ -136,10 +136,10 @@ namespace LivingCorner.Gui
 
         #endregion
 
-        private Button ButtBekStore;
+        private Button BtnBekStore;
         private Button ButMoney;
         private Label lblChop;
-        private Button ButBuyGrob;
+        private Button ButBuyCoffin;
         private Button ButBuySvat;
         private Label label1;
         private Label label2;

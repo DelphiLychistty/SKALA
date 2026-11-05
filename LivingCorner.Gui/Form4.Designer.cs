@@ -17,17 +17,17 @@ namespace LivingCorner.Gui
 
         private void InitializeComponent()
         {
-            ButtBekOrders = new Button();
+            BtnBekOrders = new Button();
             DGVOrders = new DataGridView();
             ((System.ComponentModel.ISupportInitialize)DGVOrders).BeginInit();
             SuspendLayout();
-            ButtBekOrders.Location = new Point(12, 400);
-            ButtBekOrders.Name = "ButtBekOrders";
-            ButtBekOrders.Size = new Size(107, 38);
-            ButtBekOrders.TabIndex = 0;
-            ButtBekOrders.Text = "Назад";
-            ButtBekOrders.UseVisualStyleBackColor = true;
-            ButtBekOrders.Click += ButtBekOrders_Click;
+            BtnBekOrders.Location = new Point(12, 400);
+            BtnBekOrders.Name = "BtnBekOrders";
+            BtnBekOrders.Size = new Size(107, 38);
+            BtnBekOrders.TabIndex = 0;
+            BtnBekOrders.Text = "Назад";
+            BtnBekOrders.UseVisualStyleBackColor = true;
+            BtnBekOrders.Click += BtnBekOrders_Click;
             DGVOrders.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             DGVOrders.Location = new Point(12, 12);
             DGVOrders.Name = "DGVOrders";
@@ -38,7 +38,7 @@ namespace LivingCorner.Gui
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(800, 450);
             Controls.Add(DGVOrders);
-            Controls.Add(ButtBekOrders);
+            Controls.Add(BtnBekOrders);
             Name = "Form4";
             Text = "Замовлення";
             ((System.ComponentModel.ISupportInitialize)DGVOrders).EndInit();
@@ -47,7 +47,7 @@ namespace LivingCorner.Gui
 
         #endregion
 
-        private Button ButtBekOrders;
+        private Button BtnBekOrders;
         private DataGridView DGVOrders;
     }
 }

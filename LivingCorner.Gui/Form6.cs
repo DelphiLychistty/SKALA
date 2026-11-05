@@ -7,7 +7,7 @@ namespace LivingCorner.Gui
 {
     public partial class Form6 : Form
     {
-        private Button[] grobs;
+        private Button[] coffin;
         private bool[] isBomb = new bool[9];
         private Random rnd = new Random();
         private int? serverGameId = null;
@@ -18,14 +18,14 @@ namespace LivingCorner.Gui
             timer1 = new System.Windows.Forms.Timer();
             timer1.Interval = 2500;
             timer1.Tick += DeathTimer_Tick;
-            grobs = new Button[] { ButGrob1, ButGrob2, ButGrob3, ButGrob4, ButGrob5, ButGrob6, ButGrob7, ButGrob8, ButGrob9 };
+            coffin = new Button[] { ButCoffin1, ButCoffin2, ButCoffin3, ButCoffin4, ButCoffin5, ButCoffin6, ButCoffin7, ButCoffin8, ButCoffin9 };
 
-            for (int i = 0; i < grobs.Length; i++)
+            for (int i = 0; i < coffin.Length; i++)
             {
-                grobs[i].Tag = i;
-                grobs[i].Click += Grob_Click;
-                grobs[i].BackgroundImage = Properties.Resources.Grob1;
-                grobs[i].BackgroundImageLayout = ImageLayout.Stretch;
+                coffin[i].Tag = i;
+                coffin[i].Click += Coffin_Click;
+                coffin[i].BackgroundImage = Properties.Resources.Coffin1;
+                coffin[i].BackgroundImageLayout = ImageLayout.Stretch;
             }
         }
 
@@ -83,7 +83,7 @@ namespace LivingCorner.Gui
             this.Close();
         }
 
-        private async void Grob_Click(object sender, EventArgs e)
+        private async void Coffin_Click(object sender, EventArgs e)
         {
             Button? clickBut = sender as Button;
             if (clickBut == null) return;
@@ -102,7 +102,7 @@ namespace LivingCorner.Gui
 
                     Money.AddCoins(10);
                     UpdateCoins();
-                    clickBut.BackgroundImage = Properties.Resources.Grob2;
+                    clickBut.BackgroundImage = Properties.Resources.Coffin2;
                     clickBut.BackgroundImageLayout = ImageLayout.Stretch;
                     clickBut.Enabled = false;
 
@@ -123,7 +123,7 @@ namespace LivingCorner.Gui
             {
                 Money.AddCoins(10);
                 UpdateCoins();
-                clickBut.BackgroundImage = Properties.Resources.Grob2;
+                clickBut.BackgroundImage = Properties.Resources.Coffin2;
                 clickBut.BackgroundImageLayout = ImageLayout.Stretch;
                 clickBut.Enabled = false;
             }
@@ -131,9 +131,9 @@ namespace LivingCorner.Gui
 
         private void TriggerDeath(Button explodedBtn)
         {
-            explodedBtn.BackgroundImage = Properties.Resources.Grob3;
+            explodedBtn.BackgroundImage = Properties.Resources.Coffin3;
             explodedBtn.BackgroundImageLayout = ImageLayout.Stretch;
-            foreach (Button btn in grobs)
+            foreach (Button btn in coffin)
             {
                 btn.Enabled = false;
             }
@@ -179,15 +179,15 @@ namespace LivingCorner.Gui
             Application.Exit();
         }
 
-        private void ButGrob1_Click(object sender, EventArgs e) { }
-        private void ButGrob2_Click(object sender, EventArgs e) { }
-        private void ButGrob3_Click(object sender, EventArgs e) { }
-        private void ButGrob4_Click(object sender, EventArgs e) { }
-        private void ButGrob5_Click(object sender, EventArgs e) { }
-        private void ButGrob6_Click(object sender, EventArgs e) { }
-        private void ButGrob7_Click(object sender, EventArgs e) { }
-        private void ButGrob8_Click(object sender, EventArgs e) { }
-        private void ButGrob9_Click(object sender, EventArgs e) { }
+        private void ButCoffin1_Click(object sender, EventArgs e) { }
+        private void ButCoffin2_Click(object sender, EventArgs e) { }
+        private void ButCoffin3_Click(object sender, EventArgs e) { }
+        private void ButCoffin4_Click(object sender, EventArgs e) { }
+        private void ButCoffin5_Click(object sender, EventArgs e) { }
+        private void ButCoffin6_Click(object sender, EventArgs e) { }
+        private void ButCoffin7_Click(object sender, EventArgs e) { }
+        private void ButCoffin8_Click(object sender, EventArgs e) { }
+        private void ButCoffin9_Click(object sender, EventArgs e) { }
         private void timer1_Tick(object sender, EventArgs e) { }
         private void label1_Click(object sender, EventArgs e) { }
     }

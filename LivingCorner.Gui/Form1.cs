@@ -11,7 +11,7 @@ namespace LivingCorner.Gui
             InitializeComponent();
         }
 
-        private async void ButtReg_Click(object sender, EventArgs e)
+        private async void BtnReg_Click(object sender, EventArgs e)
         {
             string firstName = textName.Text.Trim();
             string lastName = textLastName.Text.Trim();
@@ -70,28 +70,28 @@ namespace LivingCorner.Gui
             MessageBox.Show("Форму очищено. Тепер ви ніхто.", "Скидання", MessageBoxButtons.OK, MessageBoxIcon.Information);
         }
 
-        private void ButtDeat_Click(object sender, EventArgs e)
+        private void BtnDeat_Click(object sender, EventArgs e)
         {
             Form2 form2 = new Form2();
             form2.Show();
             this.Hide();
         }
 
-        private void ButtVOjid_Click(object sender, EventArgs e)
+        private void BtnVOjid_Click(object sender, EventArgs e)
         {
             Form3 form3 = new Form3();
             form3.Show();
             this.Hide();
         }
 
-        private void ButtOrders_Click(object sender, EventArgs e)
+        private void BtnOrders_Click(object sender, EventArgs e)
         {
             Form4 form4 = new Form4();
             form4.Show();
             this.Hide();
         }
 
-        private void ButtStore_Click(object sender, EventArgs e)
+        private void BtnStore_Click(object sender, EventArgs e)
         {
             Form5 form5 = new Form5();
             form5.Show();

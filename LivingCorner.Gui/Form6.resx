@@ -118,7 +118,7 @@
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
-  <data name="ButGrob1.BackgroundImage" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+  <data name="ButCoffin1.BackgroundImage" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAAm8AAAJgCAYAAADcYIRdAAAAIGNIUk0AAHomAACAhAAA+gAAAIDoAAB1
         MAAA6mAAADqYAAAXcJy6UTwAAAD/aUNDUGljYwAAKM9jYGA8wQAELAYMDLl5JUVB7k4KEZFRCuwPGBiB
@@ -12383,7 +12383,7 @@
         aKNZSqpdyxoOgkk83G3YJWwizKED3IgR/T8PmgC0xw6w4QAAAABJRU5ErkJggg==
 </value>
   </data>
-  <data name="ButGrob2.BackgroundImage" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+  <data name="ButCoffin2.BackgroundImage" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAAm8AAAJgCAYAAADcYIRdAAAAIGNIUk0AAHomAACAhAAA+gAAAIDoAAB1
         MAAA6mAAADqYAAAXcJy6UTwAAAD/aUNDUGljYwAAKM9jYGA8wQAELAYMDLl5JUVB7k4KEZFRCuwPGBiB
@@ -24648,7 +24648,7 @@
         aKNZSqpdyxoOgkk83G3YJWwizKED3IgR/T8PmgC0xw6w4QAAAABJRU5ErkJggg==
 </value>
   </data>
-  <data name="ButGrob3.BackgroundImage" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+  <data name="ButCoffin3.BackgroundImage" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAAm8AAAJgCAYAAADcYIRdAAAAIGNIUk0AAHomAACAhAAA+gAAAIDoAAB1
         MAAA6mAAADqYAAAXcJy6UTwAAAD/aUNDUGljYwAAKM9jYGA8wQAELAYMDLl5JUVB7k4KEZFRCuwPGBiB
@@ -36913,7 +36913,7 @@
         aKNZSqpdyxoOgkk83G3YJWwizKED3IgR/T8PmgC0xw6w4QAAAABJRU5ErkJggg==
 </value>
   </data>
-  <data name="ButGrob4.BackgroundImage" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+  <data name="ButCoffin4.BackgroundImage" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAAm8AAAJgCAYAAADcYIRdAAAAIGNIUk0AAHomAACAhAAA+gAAAIDoAAB1
         MAAA6mAAADqYAAAXcJy6UTwAAAD/aUNDUGljYwAAKM9jYGA8wQAELAYMDLl5JUVB7k4KEZFRCuwPGBiB
@@ -49178,7 +49178,7 @@
         aKNZSqpdyxoOgkk83G3YJWwizKED3IgR/T8PmgC0xw6w4QAAAABJRU5ErkJggg==
 </value>
   </data>
-  <data name="ButGrob5.BackgroundImage" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+  <data name="ButCoffin5.BackgroundImage" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAAm8AAAJgCAYAAADcYIRdAAAAIGNIUk0AAHomAACAhAAA+gAAAIDoAAB1
         MAAA6mAAADqYAAAXcJy6UTwAAAD/aUNDUGljYwAAKM9jYGA8wQAELAYMDLl5JUVB7k4KEZFRCuwPGBiB
@@ -61443,7 +61443,7 @@
         aKNZSqpdyxoOgkk83G3YJWwizKED3IgR/T8PmgC0xw6w4QAAAABJRU5ErkJggg==
 </value>
   </data>
-  <data name="ButGrob6.BackgroundImage" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+  <data name="ButCoffin6.BackgroundImage" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAAm8AAAJgCAYAAADcYIRdAAAAIGNIUk0AAHomAACAhAAA+gAAAIDoAAB1
         MAAA6mAAADqYAAAXcJy6UTwAAAD/aUNDUGljYwAAKM9jYGA8wQAELAYMDLl5JUVB7k4KEZFRCuwPGBiB
@@ -73708,7 +73708,7 @@
         aKNZSqpdyxoOgkk83G3YJWwizKED3IgR/T8PmgC0xw6w4QAAAABJRU5ErkJggg==
 </value>
   </data>
-  <data name="ButGrob7.BackgroundImage" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+  <data name="ButCoffin7.BackgroundImage" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAAm8AAAJgCAYAAADcYIRdAAAAIGNIUk0AAHomAACAhAAA+gAAAIDoAAB1
         MAAA6mAAADqYAAAXcJy6UTwAAAD/aUNDUGljYwAAKM9jYGA8wQAELAYMDLl5JUVB7k4KEZFRCuwPGBiB
@@ -85973,7 +85973,7 @@
         aKNZSqpdyxoOgkk83G3YJWwizKED3IgR/T8PmgC0xw6w4QAAAABJRU5ErkJggg==
 </value>
   </data>
-  <data name="ButGrob8.BackgroundImage" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+  <data name="ButCoffin8.BackgroundImage" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAAm8AAAJgCAYAAADcYIRdAAAAIGNIUk0AAHomAACAhAAA+gAAAIDoAAB1
         MAAA6mAAADqYAAAXcJy6UTwAAAD/aUNDUGljYwAAKM9jYGA8wQAELAYMDLl5JUVB7k4KEZFRCuwPGBiB
@@ -98238,7 +98238,7 @@
         aKNZSqpdyxoOgkk83G3YJWwizKED3IgR/T8PmgC0xw6w4QAAAABJRU5ErkJggg==
 </value>
   </data>
-  <data name="ButGrob9.BackgroundImage" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+  <data name="ButCoffin9.BackgroundImage" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAAm8AAAJgCAYAAADcYIRdAAAAIGNIUk0AAHomAACAhAAA+gAAAIDoAAB1
         MAAA6mAAADqYAAAXcJy6UTwAAAD/aUNDUGljYwAAKM9jYGA8wQAELAYMDLl5JUVB7k4KEZFRCuwPGBiB

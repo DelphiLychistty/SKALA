@@ -33,7 +33,7 @@ namespace LivingCorner.Gui
             }
         }
 
-        private void ButtBekDead_Click(object sender, EventArgs e)
+        private void BtnBekDead_Click(object sender, EventArgs e)
         {
             foreach (Form form in Application.OpenForms)
             {

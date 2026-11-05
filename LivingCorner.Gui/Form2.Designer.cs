@@ -29,17 +29,17 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form2));
-            ButtBekDead = new Button();
+            BtnBekDead = new Button();
             DGVDead = new DataGridView();
             ((System.ComponentModel.ISupportInitialize)DGVDead).BeginInit();
             SuspendLayout();
-            ButtBekDead.Location = new Point(12, 404);
-            ButtBekDead.Name = "ButtBekDead";
-            ButtBekDead.Size = new Size(114, 34);
-            ButtBekDead.TabIndex = 0;
-            ButtBekDead.Text = "Назад";
-            ButtBekDead.UseVisualStyleBackColor = true;
-            ButtBekDead.Click += ButtBekDead_Click;
+            BtnBekDead.Location = new Point(12, 404);
+            BtnBekDead.Name = "BtnBekDead";
+            BtnBekDead.Size = new Size(114, 34);
+            BtnBekDead.TabIndex = 0;
+            BtnBekDead.Text = "Назад";
+            BtnBekDead.UseVisualStyleBackColor = true;
+            BtnBekDead.Click += BtnBekDead_Click;
             DGVDead.BackgroundColor = Color.Gray;
             DGVDead.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             DGVDead.Location = new Point(12, 12);
@@ -54,7 +54,7 @@
             BackgroundImageLayout = ImageLayout.Stretch;
             ClientSize = new Size(800, 450);
             Controls.Add(DGVDead);
-            Controls.Add(ButtBekDead);
+            Controls.Add(BtnBekDead);
             Name = "Form2";
             Text = "Мертві";
             ((System.ComponentModel.ISupportInitialize)DGVDead).EndInit();
@@ -63,7 +63,7 @@
 
         #endregion
 
-        private Button ButtBekDead;
+        private Button BtnBekDead;
         private DataGridView DGVDead;
     }
 }

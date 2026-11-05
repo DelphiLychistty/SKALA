@@ -25,7 +25,7 @@ namespace LivingCorner.Gui
                 Size = new Size(160, 35),
                 UseVisualStyleBackColor = true
             };
-            buttBury.Click += ButtBury_Click;
+            buttBury.Click += BtnBury_Click;
             this.Controls.Add(buttBury);
         }
 
@@ -53,7 +53,7 @@ namespace LivingCorner.Gui
             }
         }
 
-        private async void ButtBury_Click(object? sender, EventArgs e)
+        private async void BtnBury_Click(object? sender, EventArgs e)
         {
             if (DGVVOjid.CurrentRow != null && DGVVOjid.CurrentRow.DataBoundItem is WaitingRowDto item)
             {
@@ -74,7 +74,7 @@ namespace LivingCorner.Gui
             }
         }
 
-        private void ButtBackVOjid_Click(object sender, EventArgs e)
+        private void BtnBackVOjid_Click(object sender, EventArgs e)
         {
             foreach (Form form in Application.OpenForms)
             {
