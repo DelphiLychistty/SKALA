@@ -1,4 +1,4 @@
-﻿namespace Живой_Уголок
+﻿namespace LivingCore.Gui
 {
     partial class Form2
     {

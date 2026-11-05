@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using System.Text;
 
-namespace Живой_Уголок
+namespace LivingCore.Gui
 {
     public static class Many
     {

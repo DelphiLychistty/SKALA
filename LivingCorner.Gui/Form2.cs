@@ -6,7 +6,7 @@ using System.Drawing;
 using System.Text;
 using System.Windows.Forms;
 
-namespace Живой_Уголок
+namespace LivingCore.Gui
 {
     public partial class Form2 : Form
     {
