@@ -1,9 +1,6 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
 using System.Drawing;
-using System.Text;
 using System.Windows.Forms;
 
 namespace Живой_Уголок
@@ -13,6 +10,8 @@ namespace Живой_Уголок
         private Button[] grobs;
         private bool[] isBomb = new bool[9];
         private Random rnd = new Random();
+        private int? serverGameId = null;
+
         public Form6()
         {
             InitializeComponent();
@@ -20,6 +19,24 @@ namespace Живой_Уголок
             timer1.Interval = 2500;
             timer1.Tick += DeathTimer_Tick;
             grobs = new Button[] { ButGrob1, ButGrob2, ButGrob3, ButGrob4, ButGrob5, ButGrob6, ButGrob7, ButGrob8, ButGrob9 };
+
+            for (int i = 0; i < grobs.Length; i++)
+            {
+                grobs[i].Tag = i;
+                grobs[i].Click += Grob_Click;
+                grobs[i].BackgroundImage = Properties.Resources.Grob1;
+                grobs[i].BackgroundImageLayout = ImageLayout.Stretch;
+            }
+        }
+
+        private async void Form6_Load(object sender, EventArgs e)
+        {
+            UpdateCoins();
+            await InitGame();
+        }
+
+        private async System.Threading.Tasks.Task InitGame()
+        {
             isBomb = new bool[9];
             int placed = 0;
             while (placed < 2)
@@ -31,34 +48,34 @@ namespace Живой_Уголок
                     placed++;
                 }
             }
-            for (int i = 0; i < grobs.Length; i++)
-            {
-                grobs[i].Tag = i;
-                grobs[i].Click += Grob_Click;
-                grobs[i].BackgroundImage = Properties.Resources.Grob1;
-                grobs[i].BackgroundImageLayout = ImageLayout.Stretch;
-            }
 
+            if (ApiClient.CurrentPersonId.HasValue)
+            {
+                var (ok, data, _) = await ApiClient.PostAsync<StartGameResponseDto>("/api/game/start", new { personId = ApiClient.CurrentPersonId.Value });
+                if (ok && data != null)
+                {
+                    serverGameId = data.GameId;
+                }
+            }
         }
-        private void Game_Load(object sender, EventArgs e)
-        {
-            UpdateCoins();
-        }
+
         private void UpdateCoins()
         {
             label1.Text = $"$: {Many.Coin}";
         }
-        private void Run_Click(object sender, EventArgs e)
+
+        private async void Run_Click(object sender, EventArgs e)
         {
+            if (serverGameId.HasValue)
+            {
+                await ApiClient.PostAsync<object>($"/api/game/{serverGameId.Value}/cashout", new { });
+            }
+
             foreach (Form form in Application.OpenForms)
             {
                 if (form is Form5 form5)
                 {
-                    Control[] foundLabel = form5.Controls.Find("lblChop", true);
-                    if (foundLabel.Length > 0 && foundLabel[0] is Label lbl)
-                    {
-                        lbl.Text = $"$: {Many.Coin}";
-                    }
+                    form5.UpdateBalanceDisplay();
                     form.Show();
                     break;
                 }
@@ -66,26 +83,45 @@ namespace Живой_Уголок
             this.Close();
         }
 
-        private void Grob_Click(object sender, EventArgs e)
+        private async void Grob_Click(object sender, EventArgs e)
         {
-            Button clickBut = sender as Button;
+            Button? clickBut = sender as Button;
             if (clickBut == null) return;
             int index = (int)clickBut.Tag;
+
+            if (serverGameId.HasValue)
+            {
+                var (ok, digData, _) = await ApiClient.PostAsync<DigResponseDto>($"/api/game/{serverGameId.Value}/dig", new { cell = index });
+                if (ok && digData != null)
+                {
+                    if (digData.Exploded)
+                    {
+                        TriggerDeath(clickBut);
+                        return;
+                    }
+
+                    Many.AddCoins(10);
+                    UpdateCoins();
+                    clickBut.BackgroundImage = Properties.Resources.Grob2;
+                    clickBut.BackgroundImageLayout = ImageLayout.Stretch;
+                    clickBut.Enabled = false;
+
+                    if (digData.Finished)
+                    {
+                        MessageBox.Show($"ВІТАЄМО! Ви викопали всі безпечні гроби і виграли супер-приз {digData.Reward} $!", "Перемога!", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        Run_Click(Run, EventArgs.Empty);
+                    }
+                    return;
+                }
+            }
+
             if (isBomb[index])
             {
-                clickBut.BackgroundImage = Properties.Resources.Grob3;
-                clickBut.BackgroundImageLayout = ImageLayout.Stretch;
-                foreach (Button btn in grobs)
-                {
-                    btn.Enabled = false;
-                }
-                Run.Enabled = false;
-                timer1.Start();
-
+                TriggerDeath(clickBut);
             }
             else
             {
-                Many.AddCoins(1);
+                Many.AddCoins(10);
                 UpdateCoins();
                 clickBut.BackgroundImage = Properties.Resources.Grob2;
                 clickBut.BackgroundImageLayout = ImageLayout.Stretch;
@@ -93,71 +129,66 @@ namespace Живой_Уголок
             }
         }
 
-        private void DeathTimer_Tick(object sender, EventArgs e)
+        private void TriggerDeath(Button explodedBtn)
+        {
+            explodedBtn.BackgroundImage = Properties.Resources.Grob3;
+            explodedBtn.BackgroundImageLayout = ImageLayout.Stretch;
+            foreach (Button btn in grobs)
+            {
+                btn.Enabled = false;
+            }
+            Run.Enabled = false;
+            timer1.Start();
+        }
+
+        private async void DeathTimer_Tick(object? sender, EventArgs e)
         {
             timer1.Stop();
+
+            if (ApiClient.CurrentPersonId.HasValue)
+            {
+                var choice = MessageBox.Show(
+                    "БА-БАХ! Ви знайшли ДІДА З БОМБОЮ!\n\nБажаєте воскреснути за 100 $?\n(Якщо 'Ні' — ви потрапите в морг)",
+                    "Вибух",
+                    MessageBoxButtons.YesNo,
+                    MessageBoxIcon.Question);
+
+                if (choice == DialogResult.Yes)
+                {
+                    var (resOk, resData, resErr) = await ApiClient.PostAsync<GenericResponse>($"/api/persons/{ApiClient.CurrentPersonId.Value}/resurrect", new { });
+                    if (resOk && resData != null)
+                    {
+                        Many.Coin = resData.Balance;
+                        MessageBox.Show("ЧУДО! Вас успішно воскресили!", "Воскресіння", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        Run_Click(Run, EventArgs.Empty);
+                        return;
+                    }
+                    else
+                    {
+                        MessageBox.Show(string.IsNullOrEmpty(resErr) ? "Не вистачило коштів на воскресіння!" : resErr, "Невдача", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    }
+                }
+
+                await ApiClient.PostAsync<GenericResponse>($"/api/persons/{ApiClient.CurrentPersonId.Value}/abandon", new { });
+                MessageBox.Show("Вас оформлено у морг як безкоштовного мерця.", "RIP", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                Application.Exit();
+                return;
+            }
+
             MessageBox.Show("Ви знайшли ДІДА з БОМБОЮ\nВИ ВМЕРЛИ", "Смерть", MessageBoxButtons.OK, MessageBoxIcon.Error);
             Application.Exit();
         }
 
-        private void ButGrob1_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void ButGrob2_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void ButGrob3_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void ButGrob4_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void ButGrob5_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void ButGrob6_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void ButGrob7_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void ButGrob8_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void ButGrob9_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void timer1_Tick(object sender, EventArgs e)
-        {
-
-        }
-
-        private void label1_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void Form6_Load(object sender, EventArgs e)
-        {
-            label1.Text = $"$: {Many.Coin}";
-        }
+        private void ButGrob1_Click(object sender, EventArgs e) { }
+        private void ButGrob2_Click(object sender, EventArgs e) { }
+        private void ButGrob3_Click(object sender, EventArgs e) { }
+        private void ButGrob4_Click(object sender, EventArgs e) { }
+        private void ButGrob5_Click(object sender, EventArgs e) { }
+        private void ButGrob6_Click(object sender, EventArgs e) { }
+        private void ButGrob7_Click(object sender, EventArgs e) { }
+        private void ButGrob8_Click(object sender, EventArgs e) { }
+        private void ButGrob9_Click(object sender, EventArgs e) { }
+        private void timer1_Tick(object sender, EventArgs e) { }
+        private void label1_Click(object sender, EventArgs e) { }
     }
 }
