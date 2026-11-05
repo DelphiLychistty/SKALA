@@ -33,9 +33,6 @@
             ButtBackVOjid = new Button();
             ((System.ComponentModel.ISupportInitialize)DGVVOjid).BeginInit();
             SuspendLayout();
-            // 
-            // DGVVOjid
-            // 
             DGVVOjid.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             DGVVOjid.Location = new Point(12, 12);
             DGVVOjid.Name = "DGVVOjid";
@@ -43,9 +40,6 @@
             DGVVOjid.Size = new Size(557, 385);
             DGVVOjid.TabIndex = 0;
             DGVVOjid.CellContentClick += DGVVOjid_CellContentClick;
-            // 
-            // ButtBackVOjid
-            // 
             ButtBackVOjid.Location = new Point(12, 403);
             ButtBackVOjid.Name = "ButtBackVOjid";
             ButtBackVOjid.Size = new Size(115, 35);
@@ -53,9 +47,6 @@
             ButtBackVOjid.Text = "Назад";
             ButtBackVOjid.UseVisualStyleBackColor = true;
             ButtBackVOjid.Click += ButtBackVOjid_Click;
-            // 
-            // Form3
-            // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
             BackgroundImage = (Image)resources.GetObject("$this.BackgroundImage");
