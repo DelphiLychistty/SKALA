@@ -33,9 +33,6 @@
             DGVDead = new DataGridView();
             ((System.ComponentModel.ISupportInitialize)DGVDead).BeginInit();
             SuspendLayout();
-            // 
-            // ButtBekDead
-            // 
             ButtBekDead.Location = new Point(12, 404);
             ButtBekDead.Name = "ButtBekDead";
             ButtBekDead.Size = new Size(114, 34);
@@ -43,9 +40,6 @@
             ButtBekDead.Text = "Назад";
             ButtBekDead.UseVisualStyleBackColor = true;
             ButtBekDead.Click += ButtBekDead_Click;
-            // 
-            // DGVDead
-            // 
             DGVDead.BackgroundColor = Color.Gray;
             DGVDead.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             DGVDead.Location = new Point(12, 12);
@@ -54,9 +48,6 @@
             DGVDead.Size = new Size(561, 386);
             DGVDead.TabIndex = 1;
             DGVDead.CellContentClick += DGVDead_CellContentClick;
-            // 
-            // Form2
-            // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
             BackgroundImage = (Image)resources.GetObject("$this.BackgroundImage");
