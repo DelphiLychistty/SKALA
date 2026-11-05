@@ -1,4 +1,4 @@
-namespace LivingCore.Gui
+namespace LivingCorner.Gui
 {
     internal static class Program
     {

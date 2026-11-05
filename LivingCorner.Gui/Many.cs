@@ -2,7 +2,7 @@ using System;
 using System.Drawing;
 using System.Windows.Forms;
 
-namespace LivingCore.Gui
+namespace LivingCorner.Gui
 {
     public static class Many
     {

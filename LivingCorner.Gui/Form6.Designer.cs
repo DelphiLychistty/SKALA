@@ -1,4 +1,4 @@
-﻿namespace LivingCore.Gui
+﻿namespace LivingCorner.Gui
 {
     partial class Form6
     {
