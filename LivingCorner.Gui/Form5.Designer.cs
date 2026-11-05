@@ -19,7 +19,7 @@ namespace LivingCorner.Gui
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form5));
             ButtBekStore = new Button();
-            ButMany = new Button();
+            ButMoney = new Button();
             lblChop = new Label();
             ButBuyGrob = new Button();
             ButBuySvat = new Button();
@@ -40,15 +40,15 @@ namespace LivingCorner.Gui
             ButtBekStore.Text = "Назад";
             ButtBekStore.UseVisualStyleBackColor = true;
             ButtBekStore.Click += ButtBekStore_Click;
-            ButMany.BackgroundImage = (Image)resources.GetObject("ButMany.BackgroundImage");
-            ButMany.BackgroundImageLayout = ImageLayout.Stretch;
-            ButMany.Location = new Point(627, 381);
-            ButMany.Name = "ButMany";
-            ButMany.Size = new Size(161, 57);
-            ButMany.TabIndex = 1;
-            ButMany.Text = "Заробити гроші";
-            ButMany.UseVisualStyleBackColor = true;
-            ButMany.Click += ButMany_Click;
+            ButMoney.BackgroundImage = (Image)resources.GetObject("ButMoney.BackgroundImage");
+            ButMoney.BackgroundImageLayout = ImageLayout.Stretch;
+            ButMoney.Location = new Point(627, 381);
+            ButMoney.Name = "ButMoney";
+            ButMoney.Size = new Size(161, 57);
+            ButMoney.TabIndex = 1;
+            ButMoney.Text = "Заробити гроші";
+            ButMoney.UseVisualStyleBackColor = true;
+            ButMoney.Click += ButMoney_Click;
             lblChop.Font = new Font("Segoe UI", 12F, FontStyle.Bold);
             lblChop.Location = new Point(12, 9);
             lblChop.Name = "lblChop";
@@ -126,7 +126,7 @@ namespace LivingCorner.Gui
             Controls.Add(ButBuySvat);
             Controls.Add(ButBuyGrob);
             Controls.Add(lblChop);
-            Controls.Add(ButMany);
+            Controls.Add(ButMoney);
             Controls.Add(ButtBekStore);
             Name = "Form5";
             Text = "Магазин";
@@ -137,7 +137,7 @@ namespace LivingCorner.Gui
         #endregion
 
         private Button ButtBekStore;
-        private Button ButMany;
+        private Button ButMoney;
         private Label lblChop;
         private Button ButBuyGrob;
         private Button ButBuySvat;

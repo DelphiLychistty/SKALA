@@ -4,7 +4,7 @@ using System.Windows.Forms;
 
 namespace LivingCorner.Gui
 {
-    public static class Many
+    public static class Money
     {
         public static int Coin { get; set; } = 0;
 

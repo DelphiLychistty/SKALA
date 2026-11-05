@@ -61,7 +61,7 @@ namespace LivingCorner.Gui
 
         private void UpdateCoins()
         {
-            label1.Text = $"$: {Many.Coin}";
+            label1.Text = $"$: {Money.Coin}";
         }
 
         private async void Run_Click(object sender, EventArgs e)
@@ -100,7 +100,7 @@ namespace LivingCorner.Gui
                         return;
                     }
 
-                    Many.AddCoins(10);
+                    Money.AddCoins(10);
                     UpdateCoins();
                     clickBut.BackgroundImage = Properties.Resources.Grob2;
                     clickBut.BackgroundImageLayout = ImageLayout.Stretch;
@@ -121,7 +121,7 @@ namespace LivingCorner.Gui
             }
             else
             {
-                Many.AddCoins(10);
+                Money.AddCoins(10);
                 UpdateCoins();
                 clickBut.BackgroundImage = Properties.Resources.Grob2;
                 clickBut.BackgroundImageLayout = ImageLayout.Stretch;
@@ -158,7 +158,7 @@ namespace LivingCorner.Gui
                     var (resOk, resData, resErr) = await ApiClient.PostAsync<GenericResponse>($"/api/persons/{ApiClient.CurrentPersonId.Value}/resurrect", new { });
                     if (resOk && resData != null)
                     {
-                        Many.Coin = resData.Balance;
+                        Money.Coin = resData.Balance;
                         MessageBox.Show("ЧУДО! Вас успішно воскресили!", "Воскресіння", MessageBoxButtons.OK, MessageBoxIcon.Information);
                         Run_Click(Run, EventArgs.Empty);
                         return;

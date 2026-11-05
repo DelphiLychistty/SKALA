@@ -47,7 +47,7 @@ namespace LivingCorner.Gui
             {
                 ApiClient.CurrentPersonId = person.Id;
                 ApiClient.CurrentPersonName = person.Name;
-                Many.Coin = person.Balance;
+                Money.Coin = person.Balance;
                 MessageBox.Show($"Вітаємо у Живому Куточку, {person.Name}!\nТвій ID: {person.Id}\nБаланс: {person.Balance} $", "Успіх", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
             else
@@ -66,7 +66,7 @@ namespace LivingCorner.Gui
             textYear.Text = "РРРР";
             ApiClient.CurrentPersonId = null;
             ApiClient.CurrentPersonName = "";
-            Many.ResetSession();
+            Money.ResetSession();
             MessageBox.Show("Форму очищено. Тепер ви ніхто.", "Скидання", MessageBoxButtons.OK, MessageBoxIcon.Information);
         }
 

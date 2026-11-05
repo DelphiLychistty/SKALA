@@ -25,7 +25,7 @@ namespace LivingCorner.Gui
 
         public void UpdateBalanceDisplay()
         {
-            lblChop.Text = $"Баланс: {Many.Coin} $";
+            lblChop.Text = $"Баланс: {Money.Coin} $";
         }
 
         private async System.Threading.Tasks.Task LoadShopData()
@@ -85,9 +85,9 @@ namespace LivingCorner.Gui
             var selectedTier = tiers[comboTier.SelectedIndex];
             int totalCost = selectedCoffin.Price + selectedPriest.Price + selectedTier.Price;
 
-            if (Many.Coin < totalCost)
+            if (Money.Coin < totalCost)
             {
-                MessageBox.Show($"Недостатньо грошей!\nРазом до сплати: {totalCost} $\nВаш баланс: {Many.Coin} $\nІдіть заробіть на кладовищі!", "Банкрут", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show($"Недостатньо грошей!\nРазом до сплати: {totalCost} $\nВаш баланс: {Money.Coin} $\nІдіть заробіть на кладовищі!", "Банкрут", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return;
             }
 
@@ -103,7 +103,7 @@ namespace LivingCorner.Gui
                 var (ok, resp, err) = await ApiClient.PostAsync<GenericResponse>("/api/shop/buy", payload);
                 if (ok && resp != null)
                 {
-                    Many.Coin = resp.Balance;
+                    Money.Coin = resp.Balance;
                     UpdateBalanceDisplay();
                     MessageBox.Show($"Замовлення успішно оформлено на сервері!\nВитрачено: {resp.Spent} $\nЗалишок: {resp.Balance} $", "Успіх", MessageBoxButtons.OK, MessageBoxIcon.Information);
                     return;
@@ -115,9 +115,9 @@ namespace LivingCorner.Gui
                 }
             }
 
-            Many.Coin -= totalCost;
+            Money.Coin -= totalCost;
             UpdateBalanceDisplay();
-            MessageBox.Show($"Вітаємо! Ритуальний пакет оформлено!\nТруна: {selectedCoffin.Name}\nСвященик: {selectedPriest.Name}\nРівень: {selectedTier.Name}\nСписано: {totalCost} $\nЗалишок: {Many.Coin} $", "Замовлення оформлено", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            MessageBox.Show($"Вітаємо! Ритуальний пакет оформлено!\nТруна: {selectedCoffin.Name}\nСвященик: {selectedPriest.Name}\nРівень: {selectedTier.Name}\nСписано: {totalCost} $\nЗалишок: {Money.Coin} $", "Замовлення оформлено", MessageBoxButtons.OK, MessageBoxIcon.Information);
         }
 
         private void ButtBekStore_Click(object sender, EventArgs e)
@@ -133,7 +133,7 @@ namespace LivingCorner.Gui
             this.Close();
         }
 
-        private void ButMany_Click(object sender, EventArgs e)
+        private void ButMoney_Click(object sender, EventArgs e)
         {
             Form6 form6 = new Form6();
             form6.Show();
